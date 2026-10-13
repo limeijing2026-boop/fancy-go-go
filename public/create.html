@@ -1,15 +1,2 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>发起一场活动｜番思</title><link rel="stylesheet" href="secondary.css"></head>
-<body><main class="app">
-<header class="top"><a class="back" href="index.html">‹</a><h1>发起一场活动</h1><button class="top-btn" onclick="toastMsg('草稿已保存')">存</button></header>
-<section class="form-intro"><h1>把一个想法，<br>变成真实的相遇。</h1><p>不必先成为专业主理人。告诉我们你想和大家一起做什么，AI 会帮你补充名称、流程、人数和邀请文案。</p><div class="progress"><i class="active"></i><i></i><i></i></div></section>
-<form class="form" onsubmit="event.preventDefault();toastMsg('提案已提交，番思将在 48 小时内联系你')">
-<div class="field"><label>你想发起什么？</label><textarea placeholder="例如：我刚得到一个很好吃的榴莲，想找 6 个人一起分享；或者我想和大家完整听完一张唱片……"></textarea></div>
-<div class="field"><label>它更接近哪一类？</label><div class="choices"><button type="button" class="choice active">表达戏剧</button><button type="button" class="choice">艺术</button><button type="button" class="choice">音乐</button><button type="button" class="choice">运动</button><button type="button" class="choice">美食</button><button type="button" class="choice">城市漫游</button><button type="button" class="choice">其他</button></div></div>
-<div class="field"><label>你希望谁来？</label><input placeholder="例如：小学四年级孩子、喜欢黑胶的成年人"></div>
-<div class="field"><label>预计多少人？</label><div class="choices"><button type="button" class="choice">3—5 人</button><button type="button" class="choice active">6—10 人</button><button type="button" class="choice">11—20 人</button><button type="button" class="choice">还不确定</button></div></div>
-<div class="field"><label>你有场地吗？</label><select><option>暂时没有，希望番思帮我匹配</option><option>有自己的空间</option><option>已经联系到合作场地</option><option>可以在家里发生</option></select></div>
-<div class="ai-box"><b>✦ 让 AI 帮你把想法变完整</b><p>生成活动名称、90 分钟流程、建议价格和朋友圈邀请文案。生成后仍由你决定。</p><button type="button" onclick="toastMsg('AI 正在生成 3 个活动方案…')">AI 帮我完善活动</button></div>
-<div class="field"><label>怎样联系你？</label><input placeholder="姓名"><input placeholder="手机号或微信号"></div>
-<button class="btn btn-primary" type="submit">提交我的生活提案 →</button>
-</form>
-</main><div class="toast" id="toast"></div><script src="secondary.js"></script></body></html>
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#FFF9F0"><meta name="description" content="番思，让生活一起发生。发现表达、戏剧、音乐、运动和亲子小聚。"><title>发起生活提案｜番思 FANSI</title><link rel="stylesheet" href="app.css?v=20261013"><script defer src="app.js?v=20261013"></script></head><body data-page="create"><a class="skip" href="#content">跳转到内容</a><div class="app" id="app"></div><div id="toast" role="status" aria-live="polite"></div><noscript>此交互 Demo 需要启用 JavaScript。请在浏览器设置中启用后刷新。</noscript></body></html>

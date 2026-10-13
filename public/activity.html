@@ -1,25 +1,2 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>活动详情｜番思</title><link rel="stylesheet" href="secondary.css"></head>
-<body><main class="app">
-<header class="top"><a class="back" href="index.html">‹</a><h1>活动详情</h1><div class="top-actions"><button class="top-btn" onclick="toastMsg('已收藏活动')">♡</button><button class="top-btn" onclick="toastMsg('分享链接已准备')">↗</button></div></header>
-<section class="hero-photo"><img class="photo" id="hero"><div class="hero-over"><span class="pill" id="category"></span><h1 id="title"></h1><p id="subtitle"></p></div></section>
-<section class="event-body">
-<div class="host-row"><img id="hostPhoto"><div><b id="hostName"></b><small id="hostMeta"></small></div><a href="host-profile.html">认识主理人 →</a></div>
-<div class="info-grid"><div class="info"><b id="time"></b><span id="duration"></span></div><div class="info"><b id="place"></b><span id="address"></span></div><div class="info"><b id="people"></b><span id="audience"></span></div><div class="info"><b id="price"></b><span>确认后为你保留席位</span></div></div>
-</section>
-<section class="section"><h2>为什么要一起做这件事</h2><p class="story" id="story"></p></section>
-<section class="section"><h2>现场会发生什么</h2><div class="steps" id="steps"></div></section>
-<section class="section"><div class="quote" id="quote"></div></section>
-<div class="sticky-action"><button class="btn btn-primary" id="joinBtn" onclick="toastMsg('加入成功，活动助手会联系你')"></button><button class="btn btn-secondary" onclick="toastMsg('已向主理人发送问题')">问问主理人</button></div>
-</main><div class="toast" id="toast"></div><script src="secondary.js"></script>
-<script>
-const base='assets/';
-const data={
- courtyard:{title:'一座院子的秘密',subtitle:'亲子胡同观察与故事创作',category:'亲子共创 · 还剩 3 席',image:base+'exec-ea25d21b-1d7e-4ecf-8001-395f95a21bcd.png',host:'小北 · 城市观察主理人',hostMeta:'已发起 9 场胡同漫游',time:'◷ 本周六 10:00',duration:'约 100 分钟',place:'⌖ 北京东四胡同',address:'集合地点报名后可见',people:'☺ 5 组亲子家庭',audience:'建议孩子 7—11 岁',price:'¥ 129／组家庭',story:'城市里有很多每天经过、却从未认真看过的东西。我们会从一棵树、一扇门和一位院子里的老邻居开始，让孩子用观察、提问和记录，发现一座院子真正的生命。',steps:[['观察任务','找到院子里三个容易被忽略的细节。'],['人物采访','向一位生活在这里的人提出三个问题。'],['故事拼图','把观察、声音和人物组合成一则院子故事。'],['共同分享','每个家庭讲出自己的发现，也听见其他视角。']],quote:'“我们不是来打卡胡同，而是练习如何真正看见一个地方。”<small>—— 主理人小北</small>',button:'¥129 · 加入活动'},
- album:{title:'一起听完一张专辑',subtitle:'不刷手机的 90 分钟声音小聚',category:'声音现场 · 还可加入 2 人',image:base+'exec-77576ef7-e1b3-4da5-bd31-8d7a04998225.png',host:'阿响 · 声音主理人',hostMeta:'收藏唱片，也收藏听歌时的故事',time:'◷ 今晚 19:30',duration:'约 90 分钟',place:'⌖ 鼓楼胡同咖啡馆',address:'地铁步行约 6 分钟',people:'☺ 6 人小聚',audience:'无需音乐专业知识',price:'¥ 69／人',story:'我们已经很久没有完整听完一张专辑了。这一次把手机反扣，从第一首听到最后一首。你不需要懂乐理，只需要带来一段真实感受，或者一张你舍不得跳过任何一首的专辑。',steps:[['认识彼此','用一首最近循环的歌介绍自己。'],['完整共听','不切歌、不聊天，完整进入一张专辑。'],['感受交换','分享哪一个声音、段落或歌词停留了下来。'],['下一张唱片','共同决定下一次要听什么。']],quote:'“音乐不是背景，它可以成为六个人认真待在一起的理由。”<small>—— 主理人阿响</small>',button:'¥69 · 加入小聚'},
- badminton:{title:'胡同羽毛球搭子',subtitle:'不计输赢，打完一起喝杯咖啡',category:'运动搭子 · 新手友好',image:base+'exec-1bd79b5f-dab8-45f3-9dcc-e65eb9ee7cd0.png',host:'林林 · 运动主理人',hostMeta:'比起比赛，更喜欢让陌生人动起来',time:'◷ 周日 16:00',duration:'约 120 分钟',place:'⌖ 北新桥羽毛球馆',address:'场馆费用现场 AA',people:'☺ 4—8 人',audience:'新手和普通爱好者',price:'AA 制',story:'不用担心技术，也不需要提前组队。我们按现场水平轻松分组，打几局、换几次搭档。运动结束后，愿意的人一起去附近喝杯咖啡，让一次约球自然变成一次认识新朋友的机会。',steps:[['轻松热身','认识名字和运动习惯，不急着分高低。'],['随机搭档','每局更换搭档，和不同的人一起配合。'],['自由加赛','想继续的人加赛，累了就坐下来聊天。'],['场外续杯','自愿参加附近咖啡小聚。']],quote:'“有时候，成为朋友只差一句：下局我们一队吧。”<small>—— 主理人林林</small>',button:'加入活动 · 费用 AA'}
-};
-const id=new URLSearchParams(location.search).get('id')||'courtyard',d=data[id]||data.courtyard;
-document.title=d.title+'｜番思';['title','subtitle','category','time','duration','place','address','people','audience','price','story'].forEach(k=>document.getElementById(k).textContent=d[k]);
-document.getElementById('hero').src=d.image;document.getElementById('hostPhoto').src=d.image;document.getElementById('hostName').textContent=d.host;document.getElementById('hostMeta').textContent=d.hostMeta;document.getElementById('quote').innerHTML=d.quote;document.getElementById('joinBtn').textContent=d.button;
-document.getElementById('steps').innerHTML=d.steps.map((s,i)=>'<div class="step"><i>0'+(i+1)+'</i><div><b>'+s[0]+'</b><p>'+s[1]+'</p></div></div>').join('');
-</script></body></html>
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#FFF9F0"><meta name="description" content="番思，让生活一起发生。发现表达、戏剧、音乐、运动和亲子小聚。"><title>活动详情｜番思 FANSI</title><link rel="stylesheet" href="app.css?v=20261013"><script defer src="app.js?v=20261013"></script></head><body data-page="detail"><a class="skip" href="#content">跳转到内容</a><div class="app" id="app"></div><div id="toast" role="status" aria-live="polite"></div><noscript>此交互 Demo 需要启用 JavaScript。请在浏览器设置中启用后刷新。</noscript></body></html>
